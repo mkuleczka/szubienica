@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="To jest strona domowa aplikacji do gry w szubienicę.
+    Zawiera tytuły filmów polskich i amerykańskich dla dzieci i młodzieży.">
+    <meta name="author" content="Monika Kuleczka">
+
+    <title>Szubienica</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+    <style>
+    .szubienica{
+    text-align:center;
+    color:#000000;
+    font-family:Marker Felt;
+    text-shadow: 8px 8px 6px #B22222;
+    }
+
+    .headers{
+    text-align:center;
+    color:#B22222;
+    font-family:Marker Felt;
+    }
+
+    .button {
+    background-color: #B22222;
+    border: 1px solid #B22222;
+    float: center;
+    display: block;
+    height: 50px;
+    width: 500px;
+    margin: 15px;
+    box-shadow: 10px 10px 6px #000000;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    font-family:Comic Sans MS;
+    padding: 10px;
+    cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <h1 class="szubienica">
+        SZUBIENICA
+    </h1>
+    <br>
+    <h3 class="headers">
+        Zasady gry
+    </h3>
+
+    <ol style="font-family:Comic Sans MS">
+        <li>Celem gry jest odgadnięcie tytułu filmu dla dzieci i młodzieży.</li>
+        <li>Wszystkie tytuły filmów są w języku polskim, mogą zawierać polskie znaki.</li>
+        <li>Początkowo hasło zapisane jest za pomocą '_', co odpowiada jednej literze.</li>
+        <li>Gracz wybiera po jednej literze z listy.</li>
+        <li>Jeżeli dana litera występuje w haśle, pojawi się ona zamiast '_'.</li>
+        <li>Jeśli litera nie występuje w haśle rysowany jest element szubienicy.</li>
+        <li>Można popełnić 12 błędów.</li>
+        <li>Wygrywa ten, kto odgadnie tytuł filmu zanim zawiśnie na szubienicy.</li>
+    </ol>
+
+    <br>
+
+    <div align="center">
+        <h3 class="headers">
+            Wybierz kategorię
+        </h3>
+        <form action="/Polskie-filmy-dla-dzieci-i-młodziezy" method="post">
+            <button class="button" onclick="post">
+            Polskie filmy dla dzieci i młodzieży
+            </button>
+        </form>
+
+        <form action="/Amerykanskie-filmy-dla-dzieci-i-mlodziezy" method="post">
+        <button class="button" onclick="post">
+            Amerykańskie filmy dla dzieci i młodzieży
+        </button>
+        </form>
+
+        <form action="/Wszystkie-filmy" method="post">
+        <button class="button" onclick="post">
+            Wszystkie filmy dla dzieci i młodzieży
+        </button>
+        </form>
+    </div>
+
+
+</body>
+</html>

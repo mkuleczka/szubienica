@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>   {% block style %}{% endblock %}
+.title {
+text-align:center;
+color:#000000;
+font-family:Marker Felt;
+text-shadow: 8px 8px 6px #B22222;
+}
+
+.button {
+background-color: #B22222;
+border: 1px solid #B22222;
+float: center;
+display: block;
+height: 30px;
+width: 80px;
+margin: 10px;
+box-shadow: 10px 10px 6px #000000;
+color: black;
+text-align: center;
+font-size: 16px;
+font-family:Comic Sans MS;
+padding: 0px;
+cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+{% block content %}{% endblock %}
+<div align="center">
+    <img style="float:right" src="/static/wisielec.jpg" alt="szubienica" width="600" height="600">
+    <br><br>
+    <div style="font-family:Comic Sans MS; color:#000000; font-size:24px; text-shadow: 8px 8px 6px #B22222;">
+        {% for word in hidden_title %}
+        <b>{{word}}</b>
+        {% if word == " " %}
+        <br>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</div>
+
+<br><br><br>
+
+<div style="font-family:Comic Sans MS" align="center">
+    <form style="font-family:Comic Sans MS; text-align=center" action="" method="POST">
+        <label for="letter">Wpisz literę lub hasło:</label>
+        <input type="text" id="letter" name="letter">
+        <input class="button" type="submit" value="OK">
+    </form>
+</div>
+
+<br><br>
+
+<div style="font-family:Comic Sans MS" align="center">
+    <p>{{message}}</p>
+    <br>
+    <button class="button" onclick="window.location.href='/';">
+        Home
+    </button>
+
+</div>
+
+</body>
+</html>
